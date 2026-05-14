@@ -36,8 +36,10 @@ export const MaskedInput = forwardRef<
     return (
       <div className="space-y-1">
         <input
-          ref={(node) => {
-            maskRef.current = node
+            ref={(node) => {
+            if (node) {
+                maskRef.current = node
+            }
 
             if (typeof ref === 'function') {
               ref(node)
