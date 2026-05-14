@@ -9,18 +9,16 @@ import {
   interestLevelSchema,
   InterestLevelFormData,
 } from '@/lib/validations/interest-level.schema'
-
+import {
+  interestLevelOptions,
+} from '@/lib/validations/interest-level.schema'
 import { useGiveawayStore } from '@/store/giveaway.store'
 
 import { RadioCard } from '@/components/ui/radio-card'
 import { StepNavigation } from '@/components/ui/step-navigation'
 import { ProgressIndicator } from '@/components/ui/progress-indicator'
 
-const OPTIONS = [
-  "Yes, I'd like to explore treatment options",
-  "Possibly, depending on financing",
-  "I'm only interested if I win the giveaway",
-]
+const OPTIONS = interestLevelOptions
 
 export function Step4() {
   const {
@@ -51,7 +49,8 @@ export function Step4() {
 
       defaultValues: {
         interestLevel:
-          formData.interestLevel,
+          formData.interestLevel ||
+          undefined,
       },
     })
 
