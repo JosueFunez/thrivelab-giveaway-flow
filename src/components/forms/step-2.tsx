@@ -40,8 +40,9 @@ export function Step2() {
 
     mode: 'onChange',
 
-    defaultValues: {
-      painArea: formData.painArea,
+  defaultValues: {
+    painArea:
+      formData.painArea || undefined,
       painAreaOther:
         formData.painAreaOther,
     },
