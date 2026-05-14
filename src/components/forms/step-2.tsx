@@ -8,6 +8,9 @@ import {
   painAreaSchema,
   PainAreaFormData,
 } from '@/lib/validations/pain-area.schema'
+import {
+  painAreaOptions,
+} from '@/lib/validations/pain-area.schema'
 
 import { useGiveawayStore } from '@/store/giveaway.store'
 
@@ -16,12 +19,7 @@ import { RadioCard } from '@/components/ui/radio-card'
 import { StepNavigation } from '@/components/ui/step-navigation'
 import { ProgressIndicator } from '@/components/ui/progress-indicator'
 
-const OPTIONS = [
-  'Knee',
-  'Shoulder',
-  'Back',
-  'Other',
-]
+const OPTIONS = painAreaOptions
 
 export function Step2() {
   const {

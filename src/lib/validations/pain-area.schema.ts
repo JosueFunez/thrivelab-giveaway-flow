@@ -1,8 +1,17 @@
 import { z } from 'zod'
 
+export const painAreaOptions = [
+  'Knee',
+  'Shoulder',
+  'Back',
+  'Other',
+] as const
+
 export const painAreaSchema = z
   .object({
-    painArea: z.string().min(1),
+    painArea: z.enum(
+      painAreaOptions
+    ),
 
     painAreaOther: z.string(),
   })
