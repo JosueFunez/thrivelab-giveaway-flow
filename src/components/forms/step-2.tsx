@@ -1,0 +1,120 @@
+'use client'
+
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+import {
+  painAreaSchema,
+  PainAreaFormData,
+} from '@/lib/validations/pain-area.schema'
+
+import { useGiveawayStore } from '@/store/giveaway.store'
+
+import { Input } from '@/components/ui/input'
+import { RadioCard } from '@/components/ui/radio-card'
+import { StepNavigation } from '@/components/ui/step-navigation'
+import { ProgressIndicator } from '@/components/ui/progress-indicator'
+
+const OPTIONS = [
+  'Knee',
+  'Shoulder',
+  'Back',
+  'Other',
+]
+
+export function Step2() {
+  const {
+    formData,
+    updateFormData,
+    nextStep,
+    previousStep,
+  } = useGiveawayStore()
+
+  const {
+    watch,
+    setValue,
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm<PainAreaFormData>({
+    resolver: zodResolver(painAreaSchema),
+
+    mode: 'onChange',
+
+    defaultValues: {
+      painArea: formData.painArea,
+      painAreaOther:
+        formData.painAreaOther,
+    },
+  })
+
+  const selectedPainArea =
+    watch('painArea')
+
+  const onSubmit = (
+    data: PainAreaFormData
+  ) => {
+    updateFormData(data)
+    nextStep()
+  }
+
+  return (
+    <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm">
+      <ProgressIndicator
+        currentStep={2}
+        totalSteps={4}
+      />
+
+      <div className="mb-8">
+        <h1 className="text-2xl font-semibold">
+          What area of your body are
+          you experiencing pain or
+          discomfort in?
+        </h1>
+      </div>
+
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="space-y-4"
+      >
+        {OPTIONS.map((option) => (
+          <RadioCard
+            key={option}
+            label={option}
+            selected={
+              selectedPainArea === option
+            }
+            onClick={() =>
+              setValue(
+                'painArea',
+                option,
+                {
+                  shouldValidate: true,
+                }
+              )
+            }
+          />
+        ))}
+
+        {selectedPainArea ===
+          'Other' && (
+          <Input
+            placeholder="Please specify"
+            {...register(
+              'painAreaOther'
+            )}
+            error={
+              errors.painAreaOther
+                ?.message
+            }
+          />
+        )}
+
+        <StepNavigation
+          onBack={previousStep}
+          isNextDisabled={!isValid}
+        />
+      </form>
+    </div>
+  )
+}
