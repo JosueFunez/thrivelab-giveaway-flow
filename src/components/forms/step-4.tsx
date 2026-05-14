@@ -111,13 +111,17 @@ export function Step4() {
 
   return (
     <FormLayout>
-      <ProgressIndicator
-        currentStep={4}
-        totalSteps={4}
-      />
-
-      <div className="mb-8">
-        <h1 className="text-2xl sm:text-3xl font-semibold">
+     <div className="mb-8 mt-8">
+        <h1   className="
+              text-[34px] sm:text-[38px]
+              leading-[38px] sm:leading-[42px]
+              tracking-tight
+              text-[#2f3728]
+              font-medium"
+            style={{
+              fontFamily:
+                'var(--font-cormorant)',
+            }}>
           If you don't win the
           giveaway, would you still
           be interested in learning
