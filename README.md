@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Thrivelab Giveaway Flow
 
-## Getting Started
+## Tech Stack
 
-First, run the development server:
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Zustand
+- React Hook Form
+- Zod
+- Supabase
 
-```bash
+## Setup Instructions
+
+1. Clone repository
+2. Install dependencies
+
+npm install
+
+3. Create .env.local
+
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+
+4. Run project
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Architecture Decisions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Zustand was used for persisted multi-step state management.
+- React Hook Form + Zod were used for scalable form validation.
+- Next.js Route Handlers were used instead of a separate backend framework to keep the architecture lightweight while maintaining API separation.
+- Supabase was selected for rapid PostgreSQL setup and deployment simplicity.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Trade-offs
 
-## Learn More
+- Authentication was intentionally omitted due to project scope.
+- Rate limiting and CAPTCHA were not implemented because of time constraints.
+- Styling focused on responsiveness and UX rather than pixel-perfect Figma replication.
 
-To learn more about Next.js, take a look at the following resources:
+## Assumptions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Phone numbers are US-based.
+- Users are allowed only one giveaway submission per email address.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Future Improvements
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add automated testing (Playwright)
+- Add analytics tracking
+- Add CAPTCHA / anti-spam protection
+- Add accessibility improvements
+- Add server-side validation schemas shared with frontend
