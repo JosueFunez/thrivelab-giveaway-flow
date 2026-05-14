@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-
+import { FormLayout } from './form-layout'
 import {
   interestLevelSchema,
   InterestLevelFormData,
@@ -111,7 +111,7 @@ export function Step4() {
   }
 
   return (
-    <div className="w-full max-w-md rounded-2xl bg-white p-6 sm:p-8 shadow-sm">
+    <FormLayout>
       <ProgressIndicator
         currentStep={4}
         totalSteps={4}
@@ -167,6 +167,6 @@ export function Step4() {
           isLoading={isSubmitting}
         />
       </form>
-    </div>
+    </FormLayout>
   )
 }

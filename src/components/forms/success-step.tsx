@@ -11,10 +11,29 @@ export function SuccessStep() {
     )
 
   return (
-    <div className="w-full max-w-md rounded-2xl bg-white p-8 text-center shadow-sm">
+    <div
+      className="
+        rounded-3xl
+        bg-gradient-to-br
+        from-[#eef3df]
+        to-[#cce9ff]
+        p-10
+        text-center
+      "
+    >
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold">
-          You’re in!
+        <h1
+          className="
+            font-serif
+            text-6xl
+            text-[#3f4d2e]
+          "
+          style={{
+            fontFamily:
+              'var(--font-cormorant)',
+          }}
+        >
+          Youre In!
         </h1>
 
         <p className="text-gray-600">

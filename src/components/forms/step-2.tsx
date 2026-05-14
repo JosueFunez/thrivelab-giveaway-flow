@@ -2,6 +2,7 @@
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { FormLayout } from './form-layout'
 
 import {
   painAreaSchema,
@@ -59,7 +60,7 @@ export function Step2() {
   }
 
   return (
-    <div className="w-full max-w-md rounded-2xl bg-white p-6 sm:p-8 shadow-sm">
+    <FormLayout>
       <ProgressIndicator
         currentStep={2}
         totalSteps={4}
@@ -115,6 +116,6 @@ export function Step2() {
           isNextDisabled={!isValid}
         />
       </form>
-    </div>
+    </FormLayout>
   )
 }

@@ -2,7 +2,7 @@
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-
+import { FormLayout } from './form-layout'
 import {
   whyNotYetSchema,
   WhyNotYetFormData,
@@ -76,7 +76,7 @@ export function Step3() {
   }
 
   return (
-    <div className="w-full max-w-md rounded-2xl bg-white p-6 sm:p-8 shadow-sm">
+    <FormLayout>
       <ProgressIndicator
         currentStep={3}
         totalSteps={4}
@@ -121,6 +121,6 @@ export function Step3() {
           isNextDisabled={!isValid}
         />
       </form>
-    </div>
+    </FormLayout>
   )
 }

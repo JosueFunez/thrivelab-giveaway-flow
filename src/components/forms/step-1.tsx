@@ -3,11 +3,10 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { MaskedInput } from '@/components/ui/masked-input'
+import { FormLayout } from './form-layout'
 
 import { contactInfoSchema, ContactInfoFormData } from '@/lib/validations/contact-info.schema'
-
 import { useGiveawayStore } from '@/store/giveaway.store'
-
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
@@ -48,13 +47,7 @@ const phoneValue = watch('phone')
   }
 
   return (
-    <div className="w-full max-w-md rounded-2xl bg-white p-6 sm:p-8 shadow-sm">
-      <div className="mb-8">
-        <h1 className="text-2xl sm:text-3xl font-semibold">
-          Win a $10,000 in-home
-          stem cell treatment
-        </h1>
-      </div>
+    <FormLayout>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -107,6 +100,6 @@ const phoneValue = watch('phone')
           Continue
         </Button>
       </form>
-    </div>
+    </FormLayout>
   )
 }
