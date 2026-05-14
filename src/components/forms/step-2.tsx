@@ -59,14 +59,14 @@ export function Step2() {
   }
 
   return (
-    <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm">
+    <div className="w-full max-w-md rounded-2xl bg-white p-6 sm:p-8 shadow-sm">
       <ProgressIndicator
         currentStep={2}
         totalSteps={4}
       />
 
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-2xl sm:text-3xl font-semibold">
           What area of your body are
           you experiencing pain or
           discomfort in?

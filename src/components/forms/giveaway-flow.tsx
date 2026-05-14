@@ -9,25 +9,28 @@ import { Step4 } from './step-4'
 import { SuccessStep } from './success-step'
 
 export function GiveawayFlow() {
-  const currentStep = useGiveawayStore(
-    (state) => state.currentStep
-  )
+    const currentStep = useGiveawayStore(
+        (state) => state.currentStep
+    )
 
-  const hasHydrated = useGiveawayStore(
-    (state) => state.hasHydrated
-  )
+    const hasHydrated = useGiveawayStore(
+        (state) => state.hasHydrated
+    )
 
-  if (!hasHydrated) {
-    return null
-  }
+    if (!hasHydrated) {
+        return null
+    }
 
-  return (
-    <>
-      {currentStep === 1 && <Step1 />}
-      {currentStep === 2 && <Step2 />}
-      {currentStep === 3 && <Step3 />}
-      {currentStep === 4 && <Step4 />}
-      {currentStep === 5 && <SuccessStep />}
-    </>
-  )
+    return (
+        <div className="animate-fade-in">
+            <>
+                {currentStep === 1 && <Step1 />}
+                {currentStep === 2 && <Step2 />}
+                {currentStep === 3 && <Step3 />}
+                {currentStep === 4 && <Step4 />}
+                {currentStep === 5 && <SuccessStep />}
+            </>
+        </div>
+
+    )
 }

@@ -98,6 +98,9 @@ export function Step4() {
       }
 
       nextStep()
+      localStorage.removeItem(
+        'thrivelab-giveaway'
+      )
     } catch (error) {
       if (error instanceof Error) {
         setApiError(error.message)
@@ -108,14 +111,14 @@ export function Step4() {
   }
 
   return (
-    <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm">
+    <div className="w-full max-w-md rounded-2xl bg-white p-6 sm:p-8 shadow-sm">
       <ProgressIndicator
         currentStep={4}
         totalSteps={4}
       />
 
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-2xl sm:text-3xl font-semibold">
           If you don't win the
           giveaway, would you still
           be interested in learning
@@ -161,6 +164,7 @@ export function Step4() {
           isNextDisabled={
             !isValid || isSubmitting
           }
+          isLoading={isSubmitting}
         />
       </form>
     </div>

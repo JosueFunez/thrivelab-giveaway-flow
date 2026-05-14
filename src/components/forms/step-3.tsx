@@ -76,14 +76,14 @@ export function Step3() {
   }
 
   return (
-    <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm">
+    <div className="w-full max-w-md rounded-2xl bg-white p-6 sm:p-8 shadow-sm">
       <ProgressIndicator
         currentStep={3}
         totalSteps={4}
       />
 
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-2xl sm:text-3xl font-semibold">
           Why haven't you already
           received a stem cell
           treatment?

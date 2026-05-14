@@ -48,9 +48,9 @@ const phoneValue = watch('phone')
   }
 
   return (
-    <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-sm">
+    <div className="w-full max-w-md rounded-2xl bg-white p-6 sm:p-8 shadow-sm">
       <div className="mb-8">
-        <h1 className="text-3xl font-semibold">
+        <h1 className="text-2xl sm:text-3xl font-semibold">
           Win a $10,000 in-home
           stem cell treatment
         </h1>
