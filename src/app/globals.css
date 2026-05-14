@@ -40,3 +40,14 @@ body {
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
 }
+
+input,
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+}

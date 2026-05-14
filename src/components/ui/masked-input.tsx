@@ -51,11 +51,19 @@ export const MaskedInput = forwardRef<
           onChange={onChange}
           placeholder={placeholder}
           className={clsx(
-            'w-full rounded-md border px-4 py-3 outline-none',
-            'focus:ring-2 focus:ring-black',
-            error
-              ? 'border-red-500'
-              : 'border-gray-300'
+            'w-full rounded-2xl',
+            'border border-[#d8d2c7]',
+            'bg-[#f6f5f1]',
+            'px-4 py-4',
+            'text-[#3f4d2e]',
+            'placeholder:text-[#c8c1b7]',
+            'placeholder:opacity-100',
+            'outline-none',
+            'transition-all',
+            'appearance-none',
+            'focus:border-[#3f4d2e]',
+            'focus:ring-0',
+            error && 'border-red-400'
           )}
         />
 
