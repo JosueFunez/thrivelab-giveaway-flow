@@ -10,22 +10,37 @@ export function SuccessStep() {
       (state) => state.resetForm
     )
 
+  const handleReset = () => {
+    localStorage.removeItem(
+      'thrivelab-giveaway'
+    )
+
+    resetForm()
+  }
+
   return (
-    <div
-      className="
-        rounded-3xl
-        bg-gradient-to-br
-        from-[#eef3df]
-        to-[#cce9ff]
-        p-10
-        text-center
-      "
-    >
-      <div className="space-y-4">
+    <div className="w-full max-w-[420px] px-4 py-10">
+      <div className="mb-28 text-center">
+        <p className="font-serif text-5xl text-[#3f4d2e]">
+          thrivelab
+        </p>
+      </div>
+
+      <div
+        className="
+          rounded-[28px]
+          bg-gradient-to-br
+          from-[#eef3df]
+          to-[#cce9ff]
+          px-6 py-10
+          text-center
+        "
+      >
         <h1
           className="
-            font-serif
-            text-6xl
+            text-[54px]
+            leading-[52px]
+            tracking-tight
             text-[#3f4d2e]
           "
           style={{
@@ -33,18 +48,39 @@ export function SuccessStep() {
               'var(--font-cormorant)',
           }}
         >
-          Youre In!
+          You’re In!
         </h1>
 
-        <p className="text-gray-600">
-          Your giveaway entry has been
-          submitted successfully.
+        <p className="mt-5 mx-auto max-w-[320px] text-[18px] leading-8 text-[#2f3728]">
+          The winner will be announced
+          on our instagram page
+          @mythrivelab
+        </p>
+      </div>
+
+      <div className="mt-10 text-center">
+        <p className="mx-auto max-w-[340px] text-[16px] leading-8 text-[#2f3728]">
+          Thank you for sharing more
+          about your health goals.
+          Whether you’re the giveaway
+          winner or not, this is the
+          first step toward exploring
+          what’s possible with
+          regenerative medicine.
         </p>
 
-        <Button onClick={resetForm}>
-          Submit another response
-        </Button>
+        <p className="mt-10 text-[16px] text-[#2f3728]">
+          We’ll be in touch with the
+          results soon.
+        </p>
       </div>
+
+      <Button
+        onClick={handleReset}
+        className="mt-10"
+      >
+        Submit another response
+      </Button>
     </div>
   )
 }
