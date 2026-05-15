@@ -14,12 +14,17 @@ export function StepNavigation({
     return (
         <div className="flex gap-3 pt-4">
             {onBack && (
-                <Button
-                    type="button"
-                    onClick={onBack}
-                    className="bg-gray-200 text-black"
+              <Button
+                type="button"
+                onClick={onBack}
+                className="
+                    border border-[#d8d2c7]
+                    bg-[#ebe9e4]
+                    !text-[#3f4d2e]
+                    hover:bg-[#dfdbd3]
+                "
                 >
-                    Back
+                Back
                 </Button>
             )}
 

@@ -116,7 +116,7 @@ Frontend error boundaries transform backend responses into user-friendly messagi
 ## 1. Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/JosueFunez/thrivelab-giveaway-flow.git
 cd thrivelab-giveaway-flow
 ```
 
